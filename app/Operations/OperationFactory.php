@@ -6,7 +6,7 @@ use Calculator\Contracts\OperationInterface;
 
 class OperationFactory{
 
-    public static function getOperation($method,$number1, $number2): OperationInterface
+    public static function getOperation(string $method, float $number1, float $number2 = null): OperationInterface
     {
         switch ($method){
             case '+':
@@ -23,6 +23,10 @@ class OperationFactory{
 
             case '/':
                 return new Division($number1, $number2);
+            break;
+
+            case 'sqtr':
+                return new SquareRoot($number1);
             break;
 
         }

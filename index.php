@@ -20,3 +20,7 @@ echo OperationExecuteBridge::execute(
     OperationFactory::getOperation('*',2,1)
 );
 
+echo OperationExecuteBridge::execute(
+    OperationFactory::getOperation('sqtr',9)
+);
+
