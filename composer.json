@@ -1,0 +1,22 @@
+{
+    "name": "guilherme/calculator",
+    "description": "Calculadora seguindo patterns",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Guiherme Rodrigues",
+            "email": "guilherme.rodrigues@db1.com.br"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Calculator\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "test/"
+        }
+    },
+    "require": {}
+}
