@@ -2,7 +2,6 @@
 
 namespace Calculator\Operations;
 
-
 class SquareRoot extends OperationAbstract {
 
     public function __construct(float $number)

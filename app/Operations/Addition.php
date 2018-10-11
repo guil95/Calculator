@@ -2,7 +2,6 @@
 
 namespace Calculator\Operations;
 
-
 class Addition extends OperationAbstract {
 
     public function __construct(float $number1, float $number2)
