@@ -2,19 +2,17 @@
 
 namespace Calculator\Operations;
 
-use Calculator\Contracts\OperationInterface;
 
-class SquareRoot implements OperationInterface{
-    private $number;
+class SquareRoot extends OperationAbstract {
 
-    public function __construct($number)
+    public function __construct(float $number)
     {
-        $this->number = $number;
+        parent::__construct($number);
     }
 
     public function calc():float
     {
-        return (float) sqrt($this->number);
+        return (float) sqrt($this->number1);
     }
 
 }

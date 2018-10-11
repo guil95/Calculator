@@ -2,16 +2,12 @@
 
 namespace Calculator\Operations;
 
-use Calculator\Contracts\OperationInterface;
 
-class Addition implements OperationInterface{
-    private $number1;
-    private $number2;
+class Addition extends OperationAbstract {
 
-    public function __construct($number1, $number2)
+    public function __construct(float $number1, float $number2)
     {
-        $this->number1 = $number1;
-        $this->number2 = $number2;
+        parent::__construct($number1, $number2);
     }
 
     public function calc():float
