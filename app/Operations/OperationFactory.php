@@ -25,7 +25,7 @@ class OperationFactory{
                 return new Division($number1, $number2);
             break;
 
-            case 'sqtr':
+            case 'sqrt':
                 return new SquareRoot($number1);
             break;
 
