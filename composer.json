@@ -18,5 +18,10 @@
             "Test\\": "test/"
         }
     },
-    "require": {}
+    "require": {
+        "symfony/routing": "^4.1",
+        "symfony/config": "^4.1",
+        "symfony/yaml": "^4.1",
+        "symfony/http-foundation": "^4.1"
+    }
 }

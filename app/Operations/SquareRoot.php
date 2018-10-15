@@ -9,4 +9,9 @@ class SquareRoot extends OperationAbstract {
         return (float) sqrt($this->number1);
     }
 
+    public function __construct(float $number)
+    {
+        $this->number1 = $number;
+    }
+
 }
