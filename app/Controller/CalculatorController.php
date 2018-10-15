@@ -9,35 +9,35 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class CalculatorController{
 
-    public function addition($numero1, $numero2)
+    public static function addition($numero1, $numero2)
     {
         ResponseCalculator::sendJson(OperationExecuteBridge::execute(
             OperationFactory::getOperation('+',$numero1,$numero2)
         ), JsonResponse::HTTP_OK);
     }
 
-    public function subtraction($numero1, $numero2)
+    public static function subtraction($numero1, $numero2)
     {
         ResponseCalculator::sendJson(OperationExecuteBridge::execute(
             OperationFactory::getOperation('-',$numero1,$numero2)
         ), JsonResponse::HTTP_OK);
     }
 
-    public function multiplication($numero1, $numero2)
+    public static function multiplication($numero1, $numero2)
     {
         ResponseCalculator::sendJson(OperationExecuteBridge::execute(
             OperationFactory::getOperation('*',$numero1,$numero2)
         ), JsonResponse::HTTP_OK);
     }
 
-    public function division($numero1, $numero2)
+    public static function division($numero1, $numero2)
     {
         ResponseCalculator::sendJson(OperationExecuteBridge::execute(
             OperationFactory::getOperation('/',$numero1,$numero2)
         ), JsonResponse::HTTP_OK);
     }
 
-    public function sqrt($numero1)
+    public static function sqrt($numero1)
     {
         ResponseCalculator::sendJson(OperationExecuteBridge::execute(
             OperationFactory::getOperation('sqrt',$numero1)
