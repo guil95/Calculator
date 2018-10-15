@@ -2,6 +2,8 @@
 namespace Calculator\Routes;
 
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\Routing\Exception\MethodNotAllowedException;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Loader\YamlFileLoader;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,7 +24,7 @@ class Router
             $params = $matcher->match(strtok($_SERVER['REQUEST_URI'], '?'));
             echo call_user_func_array($params['_controller'], self::getMethodParams($params));
         } catch (ResourceNotFoundException | MethodNotAllowedException $e) {
-            die("<pre>" . __FILE__ . " - " . __LINE__ . "\n" . print_r('erro', true) . "</pre>");
+            die("<pre>" . __FILE__ . " - " . __LINE__ . "\n" . print_r('Metodo ou url não encontrada', true) . "</pre>");
         }
     }
     

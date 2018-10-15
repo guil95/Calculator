@@ -4,40 +4,43 @@ namespace Calculator\Controller;
 
 use Calculator\Operations\OperationFactory;
 use Calculator\Operations\OperationExecuteBridge;
+use Calculator\Utils\ResponseCalculator;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class CalculatorController{
-    public function add($numero1, $numero2)
+
+    public function addition($numero1, $numero2)
     {
-        echo OperationExecuteBridge::execute(
-                OperationFactory::getOperation('+',$numero1,$numero2)
-            ).PHP_EOL;
+        ResponseCalculator::sendJson(OperationExecuteBridge::execute(
+            OperationFactory::getOperation('+',$numero1,$numero2)
+        ), JsonResponse::HTTP_OK);
     }
 
-    public function sub($numero1, $numero2)
+    public function subtraction($numero1, $numero2)
     {
-        echo OperationExecuteBridge::execute(
-                OperationFactory::getOperation('-',$numero1,$numero2)
-            ).PHP_EOL;
+        ResponseCalculator::sendJson(OperationExecuteBridge::execute(
+            OperationFactory::getOperation('-',$numero1,$numero2)
+        ), JsonResponse::HTTP_OK);
     }
 
-    public function mult($numero1, $numero2)
+    public function multiplication($numero1, $numero2)
     {
-        echo OperationExecuteBridge::execute(
-                OperationFactory::getOperation('*',$numero1,$numero2)
-            ).PHP_EOL;
+        ResponseCalculator::sendJson(OperationExecuteBridge::execute(
+            OperationFactory::getOperation('*',$numero1,$numero2)
+        ), JsonResponse::HTTP_OK);
     }
 
-    public function div($numero1, $numero2)
+    public function division($numero1, $numero2)
     {
-        echo OperationExecuteBridge::execute(
-                OperationFactory::getOperation('/',$numero1,$numero2)
-            ).PHP_EOL;
+        ResponseCalculator::sendJson(OperationExecuteBridge::execute(
+            OperationFactory::getOperation('/',$numero1,$numero2)
+        ), JsonResponse::HTTP_OK);
     }
 
     public function sqrt($numero1)
     {
-        echo OperationExecuteBridge::execute(
-                OperationFactory::getOperation('sqrt',$numero1)
-            ).PHP_EOL;
+        ResponseCalculator::sendJson(OperationExecuteBridge::execute(
+            OperationFactory::getOperation('sqrt',$numero1)
+        ), JsonResponse::HTTP_OK);
     }
 }
