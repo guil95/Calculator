@@ -1,36 +1,36 @@
 route1:
   path:     /addition/{numero1}/{numero2}
-  defaults: { _controller: 'Calculator\Controller\CalculatorController::addition' }
+  controller: Calculator\Controller\CalculatorController::addition
   methods:    [GET]
   options:
     utf8: true
 route2:
   path:     /subtraction/{numero1}/{numero2}
-  defaults: { _controller: 'Calculator\Controller\CalculatorController::subtraction' }
+  controller: Calculator\Controller\CalculatorController::subtraction
   methods:    [GET]
   options:
     utf8: true
 route3:
   path:     /multiplication/{numero1}/{numero2}
-  defaults: { _controller: 'Calculator\Controller\CalculatorController::multiplication' }
+  controller: Calculator\Controller\CalculatorController::multiplication
   methods:    [GET]
   options:
     utf8: true
 route4:
   path:     /division/{numero1}/{numero2}
-  defaults: { _controller: 'Calculator\Controller\CalculatorController::division' }
+  controller: Calculator\Controller\CalculatorController::division
   methods:    [GET]
   options:
     utf8: true
 route5:
   path:     /sqrt/{numero1}
-  defaults: { _controller: 'Calculator\Controller\CalculatorController::sqrt' }
+  controller: Calculator\Controller\CalculatorController::sqrt
   methods:    [GET]
   options:
     utf8: true
 route6:
   path:     /
-  defaults: { _controller: 'Calculator\Controller\IndexController::index' }
+  controller: Calculator\Controller\IndexController::index
   methods:    [GET]
   options:
     utf8: true
