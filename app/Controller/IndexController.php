@@ -7,6 +7,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class IndexController{
     public function index()
     {
-     ResponseCalculator::sendJson('Bem vindo a calculadora', JsonResponse::HTTP_OK);
+     ResponseCalculator::sendJson(null,'Bem vindo a calculadora', JsonResponse::HTTP_OK);
     }
 }
