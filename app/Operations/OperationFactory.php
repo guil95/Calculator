@@ -2,11 +2,10 @@
 
 namespace Calculator\Operations;
 
-use Calculator\Contracts\OperationInterface;
 
 class OperationFactory{
 
-    public static function getOperation(string $method, float $number1, float $number2 = null): OperationInterface
+    public static function getOperation(string $method, float $number1, float $number2 = null): OperationAbstract
     {
         switch ($method){
             case '+':

@@ -24,7 +24,7 @@ class Router
             $params = $matcher->match(strtok($_SERVER['REQUEST_URI'], '?'));
             echo call_user_func_array($params['_controller'], self::getMethodParams($params));
         } catch (ResourceNotFoundException | MethodNotAllowedException $e) {
-            die("<pre>" . __FILE__ . " - " . __LINE__ . "\n" . print_r('Metodo ou url não encontrada', true) . "</pre>");
+            die("<pre>" . __FILE__ . " - " . __LINE__ . "\n" . print_r('Metodo ou url nï¿½o encontrada', true) . "</pre>");
         }
     }
     

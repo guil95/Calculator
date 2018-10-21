@@ -1,9 +1,8 @@
 <?php
 
 namespace Calculator\Operations;
-use Calculator\Contracts\OperationInterface;
 
-abstract class OperationAbstract implements OperationInterface{
+abstract class OperationAbstract{
     protected $number1;
     protected $number2;
 
@@ -12,4 +11,6 @@ abstract class OperationAbstract implements OperationInterface{
         $this->number1 = $number1;
         $this->number2 = $number2;
     }
+
+    public abstract function calc():float;
 }

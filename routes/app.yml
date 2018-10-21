@@ -1,31 +1,31 @@
 route1:
-  path:     /addition/{numero1}/{numero2}
+  path:     /addition
   controller: Calculator\Controller\CalculatorController::addition
-  methods:    [GET]
+  methods:    [POST]
   options:
     utf8: true
 route2:
-  path:     /subtraction/{numero1}/{numero2}
+  path:     /subtraction
   controller: Calculator\Controller\CalculatorController::subtraction
-  methods:    [GET]
+  methods:    [POST]
   options:
     utf8: true
 route3:
-  path:     /multiplication/{numero1}/{numero2}
+  path:     /multiplication
   controller: Calculator\Controller\CalculatorController::multiplication
-  methods:    [GET]
+  methods:    [POST]
   options:
     utf8: true
 route4:
-  path:     /division/{numero1}/{numero2}
+  path:     /division
   controller: Calculator\Controller\CalculatorController::division
-  methods:    [GET]
+  methods:    [POST]
   options:
     utf8: true
 route5:
-  path:     /sqrt/{numero1}
+  path:     /sqrt
   controller: Calculator\Controller\CalculatorController::sqrt
-  methods:    [GET]
+  methods:    [POST]
   options:
     utf8: true
 route6:

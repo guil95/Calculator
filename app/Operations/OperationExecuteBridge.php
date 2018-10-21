@@ -1,10 +1,9 @@
 <?php
 
 namespace Calculator\Operations;
-use Calculator\Contracts\OperationInterface;
 
 class OperationExecuteBridge{
-    public static function execute(OperationInterface $operation)
+    public static function execute(OperationAbstract $operation)
     {
         return $operation->calc();
     }
