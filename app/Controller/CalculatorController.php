@@ -2,6 +2,8 @@
 
 namespace Calculator\Controller;
 
+use Calculator\Exceptions\AmountNumbersException;
+use Calculator\Exceptions\DivisionByZeroException;
 use Calculator\Operations\OperationFactory;
 use Calculator\Operations\OperationExecuteBridge;
 use Calculator\Facade\ResponseCalculator;
@@ -15,16 +17,20 @@ class CalculatorController{
     {
         $request = Request::createFromGlobals();
         $request = $request->request->all();
-        if(!ValidateRequest::isValid('+', $request)){
+
+        try{
+            ValidateRequest::isValid('+', $request);
+        }catch (AmountNumbersException $e){
             ResponseCalculator::sendJson(
                 null,
-                'Verifique os parametros passados',
+                $e->getMessage(),
                 JsonResponse::HTTP_BAD_REQUEST
             );
             return;
         }
-        $numero1 = $request['numero1'];
-        $numero2 = $request['numero2'];
+
+        $numero1 = (float) $request['numero1'];
+        $numero2 = (float) $request['numero2'];
 
         ResponseCalculator::sendJson(OperationExecuteBridge::execute(
             OperationFactory::getOperation('+',$numero1,$numero2)
@@ -36,10 +42,12 @@ class CalculatorController{
         $request = Request::createFromGlobals();
         $request = $request->request->all();
 
-        if(!ValidateRequest::isValid('-', $request)){
+        try{
+            ValidateRequest::isValid('-', $request);
+        }catch (AmountNumbersException $e){
             ResponseCalculator::sendJson(
                 null,
-                'Verifique os parametros passados',
+                $e->getMessage(),
                 JsonResponse::HTTP_BAD_REQUEST
             );
             return;
@@ -58,10 +66,12 @@ class CalculatorController{
         $request = Request::createFromGlobals();
         $request = $request->request->all();
 
-        if(!ValidateRequest::isValid('*', $request)){
+        try{
+            ValidateRequest::isValid('*', $request);
+        }catch (AmountNumbersException $e){
             ResponseCalculator::sendJson(
                 null,
-                'Verifique os parametros passados',
+                $e->getMessage(),
                 JsonResponse::HTTP_BAD_REQUEST
             );
             return;
@@ -79,10 +89,20 @@ class CalculatorController{
     {
         $request = Request::createFromGlobals();
         $request = $request->request->all();
-        if(!ValidateRequest::isValid('/', $request)){
+
+        try{
+            ValidateRequest::isValid('/', $request);
+        }catch (DivisionByZeroException $e){
             ResponseCalculator::sendJson(
                 null,
-                'Verifique os parametros passados, deve se passar dois números e os dois números devem ser diferentes de 0',
+                $e->getMessage(),
+                JsonResponse::HTTP_BAD_REQUEST
+            );
+            return;
+        }catch (AmountNumbersException $e){
+            ResponseCalculator::sendJson(
+                null,
+                $e->getMessage(),
                 JsonResponse::HTTP_BAD_REQUEST
             );
             return;
@@ -101,10 +121,12 @@ class CalculatorController{
         $request = Request::createFromGlobals();
         $request = $request->request->all();
 
-        if(!ValidateRequest::isValid('sqrt', $request)){
+        try{
+            ValidateRequest::isValid('sqrt', $request);
+        }catch (AmountNumbersException $e){
             ResponseCalculator::sendJson(
                 null,
-                'Verifique os parametros passados',
+                $e->getMessage(),
                 JsonResponse::HTTP_BAD_REQUEST
             );
             return;
