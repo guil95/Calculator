@@ -2,7 +2,6 @@
 
 namespace Test;
 
-
 use Calculator\Operations\OperationExecuteBridge;
 use Calculator\Operations\OperationFactory;
 use PHPUnit\Framework\TestCase;
