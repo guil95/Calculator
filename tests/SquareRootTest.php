@@ -4,6 +4,7 @@ namespace Test;
 
 use Calculator\Operations\OperationExecuteBridge;
 use Calculator\Operations\OperationFactory;
+use Calculator\Operations\SquareRoot;
 use PHPUnit\Framework\TestCase;
 
 class SquareRootTest extends TestCase
@@ -15,6 +16,14 @@ class SquareRootTest extends TestCase
             OperationExecuteBridge::execute(
                 OperationFactory::getOperation('sqrt',9)
             )
+        );
+    }
+
+    public function testTypeInstance(): void
+    {
+        $this->assertInstanceOf(
+            SquareRoot::class,
+            OperationFactory::getOperation('sqrt',2)
         );
     }
 }

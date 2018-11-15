@@ -4,6 +4,7 @@ namespace Test;
 
 use Calculator\Operations\OperationExecuteBridge;
 use Calculator\Operations\OperationFactory;
+use Calculator\Operations\Subtraction;
 use PHPUnit\Framework\TestCase;
 
 class SubtractionTest extends TestCase
@@ -15,6 +16,14 @@ class SubtractionTest extends TestCase
             OperationExecuteBridge::execute(
                 OperationFactory::getOperation('-',9,2)
             )
+        );
+    }
+
+    public function testTypeInstance(): void
+    {
+        $this->assertInstanceOf(
+            Subtraction::class,
+            OperationFactory::getOperation('-',9,2)
         );
     }
 }

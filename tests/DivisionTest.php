@@ -2,6 +2,7 @@
 
 namespace Test;
 
+use Calculator\Operations\Division;
 use Calculator\Operations\OperationExecuteBridge;
 use Calculator\Operations\OperationFactory;
 use PHPUnit\Framework\TestCase;
@@ -17,4 +18,13 @@ class DivisionTest extends TestCase
             )
         );
     }
+
+    public function testTypeInstance(): void
+    {
+        $this->assertInstanceOf(
+            Division::class,
+            OperationFactory::getOperation('/',5,5)
+        );
+    }
+
 }
