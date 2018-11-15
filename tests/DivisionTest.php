@@ -19,7 +19,7 @@ class DivisionTest extends TestCase
         );
     }
 
-    public function testTypeInstance(): void
+    public function testInstanceOf(): void
     {
         $this->assertInstanceOf(
             Division::class,

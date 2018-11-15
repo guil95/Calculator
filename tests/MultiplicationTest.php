@@ -19,7 +19,7 @@ class MultiplicationTest extends TestCase
         );
     }
 
-    public function testTypeInstance(): void
+    public function testInstanceOf(): void
     {
         $this->assertInstanceOf(
             Multiplication::class,

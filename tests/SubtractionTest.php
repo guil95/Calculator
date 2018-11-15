@@ -19,7 +19,7 @@ class SubtractionTest extends TestCase
         );
     }
 
-    public function testTypeInstance(): void
+    public function testInstanceOf(): void
     {
         $this->assertInstanceOf(
             Subtraction::class,

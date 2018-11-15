@@ -19,7 +19,7 @@ class SquareRootTest extends TestCase
         );
     }
 
-    public function testTypeInstance(): void
+    public function testInstanceOf(): void
     {
         $this->assertInstanceOf(
             SquareRoot::class,

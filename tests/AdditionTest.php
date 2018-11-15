@@ -19,7 +19,7 @@ class AdditionTest extends TestCase
         );
     }
 
-    public function testTypeInstance(): void
+    public function testInstanceOf(): void
     {
         $this->assertInstanceOf(
             Addition::class,
