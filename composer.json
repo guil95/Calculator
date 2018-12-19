@@ -14,6 +14,12 @@
             "Tests\\":"tests/"
         }
     },
+    "scripts": {
+        "test-code": "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests"
+    },
+    "scripts-descriptions": {
+        "test-code": "Execução de testes"
+    },
     "require": {
         "symfony/routing": "^4.1",
         "symfony/config": "^4.1",
