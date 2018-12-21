@@ -11,7 +11,7 @@ class SquareRoot extends OperationAbstract {
 
     public function __construct(float $number)
     {
-        $this->number1 = $number;
+        parent::__construct($number);
     }
 
 }

@@ -11,7 +11,7 @@ namespace Calculator\Exceptions;
 
 class DivisionByZeroException extends \Exception
 {
-    public function  __construct($message = "Division by zero is not valid", $code = 0, Throwable $previous = null)
+    public function  __construct($message = "Division by zero is not valid", $code = 0, \Throwable $previous = null)
     {
         parent::__construct($message, $code, $previous);
     }

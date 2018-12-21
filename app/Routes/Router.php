@@ -28,7 +28,7 @@ class Router
         }
     }
     
-    private function getMethodParams($params)
+    private static function getMethodParams($params)
     {
         return array_filter($params, function($key){
             return $key != "_controller" && $key != "_route";
