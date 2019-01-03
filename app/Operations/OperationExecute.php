@@ -2,7 +2,7 @@
 
 namespace Calculator\Operations;
 
-class OperationExecuteBridge{
+class OperationExecute{
     public static function execute(OperationAbstract $operation)
     {
         return $operation->calc();

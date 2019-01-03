@@ -2,7 +2,7 @@
 
 namespace Test;
 
-use Calculator\Operations\OperationExecuteBridge;
+use Calculator\Operations\OperationExecute;
 use Calculator\Operations\OperationFactory;
 use Calculator\Operations\SquareRoot;
 use PHPUnit\Framework\TestCase;
@@ -13,7 +13,7 @@ class SquareRootTest extends TestCase
     {
        $this->assertEquals(
             3,
-            OperationExecuteBridge::execute(
+            OperationExecute::execute(
                 OperationFactory::getOperation('sqrt',9)
             )
         );

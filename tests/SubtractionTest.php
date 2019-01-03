@@ -2,7 +2,7 @@
 
 namespace Test;
 
-use Calculator\Operations\OperationExecuteBridge;
+use Calculator\Operations\OperationExecute;
 use Calculator\Operations\OperationFactory;
 use Calculator\Operations\Subtraction;
 use PHPUnit\Framework\TestCase;
@@ -13,7 +13,7 @@ class SubtractionTest extends TestCase
     {
        $this->assertEquals(
             7,
-            OperationExecuteBridge::execute(
+            OperationExecute::execute(
                 OperationFactory::getOperation('-',9,2)
             )
         );

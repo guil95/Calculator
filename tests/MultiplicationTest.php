@@ -3,7 +3,7 @@
 namespace Test;
 
 use Calculator\Operations\Multiplication;
-use Calculator\Operations\OperationExecuteBridge;
+use Calculator\Operations\OperationExecute;
 use Calculator\Operations\OperationFactory;
 use PHPUnit\Framework\TestCase;
 
@@ -13,7 +13,7 @@ class MultiplicationTest extends TestCase
     {
        $this->assertEquals(
             15,
-            OperationExecuteBridge::execute(
+            OperationExecute::execute(
                 OperationFactory::getOperation('*',5,3)
             )
         );

@@ -5,7 +5,7 @@ namespace Calculator\Controller;
 use Calculator\Exceptions\AmountNumbersException;
 use Calculator\Exceptions\DivisionByZeroException;
 use Calculator\Operations\OperationFactory;
-use Calculator\Operations\OperationExecuteBridge;
+use Calculator\Operations\OperationExecute;
 use Calculator\Facade\ResponseCalculator;
 use Calculator\Validators\ValidateRequest;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -32,7 +32,7 @@ class CalculatorController{
         $numero1 = (float) $request['numero1'];
         $numero2 = (float) $request['numero2'];
 
-        ResponseCalculator::sendJson(OperationExecuteBridge::execute(
+        ResponseCalculator::sendJson(OperationExecute::execute(
             OperationFactory::getOperation('+',$numero1,$numero2)
         ), "Soma realizada com sucesso", JsonResponse::HTTP_OK);
     }
@@ -56,7 +56,7 @@ class CalculatorController{
         $numero1 = $request['numero1'];
         $numero2 = $request['numero2'];
 
-        ResponseCalculator::sendJson(OperationExecuteBridge::execute(
+        ResponseCalculator::sendJson(OperationExecute::execute(
             OperationFactory::getOperation('-',$numero1,$numero2)
         ), "Subtração realizada com sucesso", JsonResponse::HTTP_OK);
     }
@@ -80,7 +80,7 @@ class CalculatorController{
         $numero1 = $request['numero1'];
         $numero2 = $request['numero2'];
 
-        ResponseCalculator::sendJson(OperationExecuteBridge::execute(
+        ResponseCalculator::sendJson(OperationExecute::execute(
             OperationFactory::getOperation('*',$numero1,$numero2)
         ), "Multiplicação realizada com sucesso", JsonResponse::HTTP_OK);
     }
@@ -111,7 +111,7 @@ class CalculatorController{
         $numero1 = $request['numero1'];
         $numero2 = $request['numero2'];
 
-        ResponseCalculator::sendJson(OperationExecuteBridge::execute(
+        ResponseCalculator::sendJson(OperationExecute::execute(
             OperationFactory::getOperation('/',$numero1,$numero2)
         ), "Divisão realizada com sucesso", JsonResponse::HTTP_OK);
     }
@@ -134,7 +134,7 @@ class CalculatorController{
 
         $numero1 = $request['numero1'];
 
-        ResponseCalculator::sendJson(OperationExecuteBridge::execute(
+        ResponseCalculator::sendJson(OperationExecute::execute(
             OperationFactory::getOperation('sqrt',$numero1)
         ), "Raiz quadrada realizada com sucesso", JsonResponse::HTTP_OK);
     }
