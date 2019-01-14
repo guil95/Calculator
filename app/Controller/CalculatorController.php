@@ -16,8 +16,7 @@ class CalculatorController{
     public function addition()
     {
         $request = Request::createFromGlobals();
-        $request = $request->request->all();
-
+        $request = json_decode($request->getContent());
         try{
             ValidateRequest::isValid('+', $request);
         }catch (AmountNumbersException $e){
@@ -29,18 +28,18 @@ class CalculatorController{
             return;
         }
 
-        $numero1 = (float) $request['numero1'];
-        $numero2 = (float) $request['numero2'];
+        $number1 = (float) $request->number1;
+        $number2 = (float) $request->number2;
 
         ResponseCalculator::sendJson(OperationExecute::execute(
-            OperationFactory::getOperation('+',$numero1,$numero2)
+            OperationFactory::getOperation('+',$number1,$number2)
         ), "Soma realizada com sucesso", JsonResponse::HTTP_OK);
     }
 
     public function subtraction()
     {
         $request = Request::createFromGlobals();
-        $request = $request->request->all();
+        $request = $request = json_decode($request->getContent());
 
         try{
             ValidateRequest::isValid('-', $request);
@@ -53,18 +52,18 @@ class CalculatorController{
             return;
         }
 
-        $numero1 = $request['numero1'];
-        $numero2 = $request['numero2'];
+        $number1 = $request->number1;
+        $number2 = $request->number2;
 
         ResponseCalculator::sendJson(OperationExecute::execute(
-            OperationFactory::getOperation('-',$numero1,$numero2)
+            OperationFactory::getOperation('-',$number1,$number2)
         ), "Subtração realizada com sucesso", JsonResponse::HTTP_OK);
     }
 
     public function multiplication()
     {
         $request = Request::createFromGlobals();
-        $request = $request->request->all();
+        $request = json_decode($request->getContent());
 
         try{
             ValidateRequest::isValid('*', $request);
@@ -77,18 +76,18 @@ class CalculatorController{
             return;
         }
 
-        $numero1 = $request['numero1'];
-        $numero2 = $request['numero2'];
+        $number1 = (float) $request->number1;
+        $number2 = (float) $request->number2;
 
         ResponseCalculator::sendJson(OperationExecute::execute(
-            OperationFactory::getOperation('*',$numero1,$numero2)
+            OperationFactory::getOperation('*',$number1,$number2)
         ), "Multiplicação realizada com sucesso", JsonResponse::HTTP_OK);
     }
 
     public function division()
     {
         $request = Request::createFromGlobals();
-        $request = $request->request->all();
+        $request = json_decode($request->getContent());
 
         try{
             ValidateRequest::isValid('/', $request);
@@ -108,18 +107,18 @@ class CalculatorController{
             return;
         }
 
-        $numero1 = $request['numero1'];
-        $numero2 = $request['numero2'];
+        $number1 = (float) $request->number1;
+        $number2 = (float) $request->number2;
 
         ResponseCalculator::sendJson(OperationExecute::execute(
-            OperationFactory::getOperation('/',$numero1,$numero2)
+            OperationFactory::getOperation('/',$number1,$number2)
         ), "Divisão realizada com sucesso", JsonResponse::HTTP_OK);
     }
 
     public function sqrt()
     {
         $request = Request::createFromGlobals();
-        $request = $request->request->all();
+        $request = json_decode($request->getContent());
 
         try{
             ValidateRequest::isValid('sqrt', $request);
@@ -132,10 +131,10 @@ class CalculatorController{
             return;
         }
 
-        $numero1 = $request['numero1'];
+        $number1 = $request->number1;
 
         ResponseCalculator::sendJson(OperationExecute::execute(
-            OperationFactory::getOperation('sqrt',$numero1)
+            OperationFactory::getOperation('sqrt',$number1)
         ), "Raiz quadrada realizada com sucesso", JsonResponse::HTTP_OK);
     }
 }

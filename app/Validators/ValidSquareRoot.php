@@ -4,16 +4,17 @@ namespace Calculator\Validators;
 
 
 use Calculator\Exceptions\AmountNumbersException;
+use Calculator\Schema\OneNumberSchema;
+use JsonSchema\Validator;
 
 class ValidSquareRoot implements ValidatorInterface
 {
-    public static function isValid(array $request): bool
+    public static function isValid(object $request): bool
     {
-        if( !isset($request['numero1']) ){
-            throw new AmountNumbersException();
-        }
+        $validator = new Validator();
+        $validator->validate($request, OneNumberSchema::getSchema());
 
-        if( $request['numero1'] == null ){
+        if(!$validator->isValid()){
             throw new AmountNumbersException();
         }
 

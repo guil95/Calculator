@@ -15,16 +15,19 @@
         }
     },
     "scripts": {
-        "test-code": "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests"
+        "test": "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests",
+        "analyse": "vendor/bin/phpstan analyse app --level 7"
     },
     "scripts-descriptions": {
-        "test-code": "Execução de testes"
+        "test": "Execução de testes",
+        "analyse": "Executa analise de código"
     },
     "require": {
         "symfony/routing": "^4.1",
         "symfony/config": "^4.1",
         "symfony/yaml": "^4.1",
-        "symfony/http-foundation": "^4.1"
+        "symfony/http-foundation": "^4.1",
+        "justinrainbow/json-schema": "^5.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^7",

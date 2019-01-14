@@ -4,18 +4,20 @@ namespace Calculator\Validators;
 
 
 use Calculator\Exceptions\AmountNumbersException;
+use Calculator\Schema\TwoNumbersSchema;
+use JsonSchema\Validator;
 
 class ValidMultiplication implements ValidatorInterface
 {
-    public static function isValid(array $request): bool
+    public static function isValid(object $request): bool
     {
-        if( !isset($request['numero1']) || !isset($request['numero2']) ){
+        $validator = new Validator();
+        $validator->validate($request, TwoNumbersSchema::getSchema());
+
+        if(!$validator->isValid()){
             throw new AmountNumbersException();
         }
 
-        if( $request['numero1'] == null || $request['numero2'] == null ){
-            throw new AmountNumbersException();
-        }
 
         return true;
     }
