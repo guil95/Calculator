@@ -10,13 +10,13 @@
     ],
     "autoload": {
         "psr-4": {
-            "Calculator\\": "app/",
+            "Calculator\\": "src/",
             "Tests\\":"tests/"
         }
     },
     "scripts": {
         "test": "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests",
-        "analyse": "vendor/bin/phpstan analyse app --level 7"
+        "analyse": "vendor/bin/phpstan analyse src --level 7"
     },
     "scripts-descriptions": {
         "test": "Execução de testes",
