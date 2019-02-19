@@ -2,6 +2,7 @@
 
 namespace Calculator\Controller;
 
+use ApiResponse\Response\ApiResponse;
 use Calculator\Exceptions\AmountNumbersException;
 use Calculator\Exceptions\DivisionByZeroException;
 use Calculator\Operations\OperationFactory;
@@ -31,9 +32,16 @@ class CalculatorController{
         $number1 = (float) $request->number1;
         $number2 = (float) $request->number2;
 
-        ResponseCalculator::sendJson(OperationExecute::execute(
-            OperationFactory::getOperation('+',$number1,$number2)
-        ), "Soma realizada com sucesso", JsonResponse::HTTP_OK);
+
+        ApiResponse::json([
+            'data' => OperationExecute::execute(
+                OperationFactory::getOperation('+',$number1,$number2)
+            )
+        ], ApiResponse::HTTP_BAD_REQUEST);
+
+//        ResponseCalculator::sendJson(OperationExecute::execute(
+//            OperationFactory::getOperation('+',$number1,$number2)
+//        ), "Soma realizada com sucesso", JsonResponse::HTTP_OK);
     }
 
     public function subtraction()

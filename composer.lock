@@ -4,8 +4,44 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "412ad11ed75ca93d6b51da0a8ffb2a2c",
+    "content-hash": "ad59e9724139e42a27ad2d2b52e3bba1",
     "packages": [
+        {
+            "name": "guil95/api-response",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guil95/ApiResponse.git",
+                "reference": "a1e0915a90712aec3f954ba79619cacca02e7693"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guil95/ApiResponse/zipball/a1e0915a90712aec3f954ba79619cacca02e7693",
+                "reference": "a1e0915a90712aec3f954ba79619cacca02e7693",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ApiResponse\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Rodrigues",
+                    "email": "guilhermerodriguestb@gmail.com"
+                }
+            ],
+            "description": "Lib for responses api",
+            "time": "2019-02-19T14:36:05+00:00"
+        },
         {
             "name": "justinrainbow/json-schema",
             "version": "5.2.8",
