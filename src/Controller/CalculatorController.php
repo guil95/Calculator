@@ -37,7 +37,7 @@ class CalculatorController{
             'data' => OperationExecute::execute(
                 OperationFactory::getOperation('+',$number1,$number2)
             )
-        ], ApiResponse::HTTP_BAD_REQUEST);
+        ], ApiResponse::HTTP_OK);
 
 //        ResponseCalculator::sendJson(OperationExecute::execute(
 //            OperationFactory::getOperation('+',$number1,$number2)
