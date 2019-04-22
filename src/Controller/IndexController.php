@@ -2,7 +2,6 @@
 
 namespace Calculator\Controller;
 use Calculator\Facade\ResponseCalculator;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 class IndexController{
     public function index()
