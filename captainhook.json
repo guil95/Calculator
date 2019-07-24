@@ -28,11 +28,6 @@
                 "action": "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests",
                 "options": [],
                 "conditions": []
-            },
-            {
-                "action": "phpcs --standard=psr2 src",
-                "options": [],
-                "conditions": []
             }
         ]
     },

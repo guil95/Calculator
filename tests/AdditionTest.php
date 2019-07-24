@@ -12,7 +12,7 @@ class AdditionTest extends TestCase
     public function testAddition():void
     {
        $this->assertEquals(
-            10.1,
+            10.2,
             OperationExecute::execute(
                 OperationFactory::getOperation('+',5,5.2)
             )
